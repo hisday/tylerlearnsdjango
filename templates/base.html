@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 
-<!-- 3 --> 
+<!-- 3 -->
 <head>
     <title>
        {% block title %}Django Web Programming{% endblock %}
@@ -24,7 +24,7 @@
 </div>
 
 <!-- 8 -->
-<div id="menu">   
+<div id="menu">
     <li><a href="{% url 'home' %}">Home</a></li>
     <li><a href="{% url 'bookmark:index' %}">Bookmark</a></li>
     <li><a href="{% url 'blog:index' %}">Blog</a></li>
@@ -47,7 +47,7 @@
     </li>
 
     <li><a href="{% url 'blog:post_archive' %}">Archive</a></li>
-    <li><a href="#">Search</a></li>
+    <li><a href="{% url 'blog:search' %}">Search</a></li>
     <li><a href="{% url 'admin:index' %}">Admin</a></li>
 </div>
 
