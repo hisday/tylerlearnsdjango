@@ -1,5 +1,6 @@
 from django.db.models.fields.files import ImageField, ImageFieldFile
-from PIL import Image
+from PIL import Image, ImageOps
+
 import os
 
 def _add_thumb(s):
@@ -21,14 +22,14 @@ class ThumbnailImageFieldFile(ImageFieldFile):
     thumb_url = property(_get_thumb_url)
 
     def save(self, name, content, save=True):
-        print(self.path)
         super(ThumbnailImageFieldFile, self).save(name, content, save)
         img = Image.open(self.path)
+        thum_size = (128 - 5*2, 128 - 5*2)
+        thumb = ImageOps.fit(img, thum_size, Image.ANTIALIAS)
 
-        size = (128, 128)
-        img.thumbnail(size, Image.ANTIALIAS)
-        background = Image.new('RGB', size, (255, 255, 255))
-        background.paste(img, (128, 128))
+        background_size = (128, 128)
+        background = Image.new('RGB', background_size, (255, 255, 255))
+        background.paste(thumb, (5, 5))
         background.save(self.thumb_path, 'JPEG')
 
     def delete(self, save=True):
