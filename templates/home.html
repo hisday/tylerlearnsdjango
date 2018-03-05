@@ -10,7 +10,7 @@
 <div id="content_home">
     <div id = "homeimg">
         <a href="/"><img src="{% static 'img/home.JPG' %}" style="height: 256px;"/></a>
-        <h4 style="margin: 0;">This is Django powered web site.</h4>
+        <h4 style="margin: 0;">Welcome to tyler's place</h4>
     </div>
 
     <hr style="margin: 5px 0;">
@@ -33,7 +33,7 @@
         </tr>
 
         <tr>
-            <td><b><i><a href="#">Photo</a></i></b></td>
+            <td><b><i><a href="{% url 'photo:index' %}">Photo</a></i></b></td>
             <td>You can upload you photos and share to others.</td>
             <td class="Edit"><i><a href="#">Add</a></i></td>
             <td class="Edit"><i><a href="#">Change</a></i></td>
