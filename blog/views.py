@@ -71,7 +71,6 @@ class SearchFormView(FormView):
         context['form'] = form
         context['search_term'] = schWord
         context['object_list'] = post_list
-
         return render(self.request, self.template_name, context)
 
 class PostCreateView(LoginRequiredMixin, CreateView):
