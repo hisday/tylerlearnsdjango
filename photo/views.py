@@ -60,14 +60,14 @@ from photo.forms import PhotoInlineFormSet
 class AlbumPhotoCV(LoginRequiredMixin, CreateView):
     model = Album
     fields = ['name', 'description']
-    template_name = 'photo/album_form.html'
+    template_name = 'photo/album_form.html' #can be commented out. _form suffix is default template of CreateView
 
     def get_context_data(self, **kwargs):
         context = super(AlbumPhotoCV, self).get_context_data(**kwargs)
         if self.request.POST:
-            context['formset'] = PhotoInlineFormSet(self.request.POST, self.request.FILES)
+            context['formset'] = PhotoInlineFormSet(self.request.POST, self.request.FILES) #request.FILES for file uploading
         else:
-            context['formset'] = PhotoInlineFormSet()
+            context['formset'] = PhotoInlineFormSet() #Get request
         return context
 
     def form_valid(self, form):
@@ -77,12 +77,12 @@ class AlbumPhotoCV(LoginRequiredMixin, CreateView):
         for photoform in formset:
             photoform.instance.owner = self.request.user
         if formset.is_valid():
-            self.object = form.save()
-            formset.instance = self.object
-            formset.save()
-            return redirect(self.object.get_absolute_url())
+            self.object = form.save() #save album
+            formset.instance = self.object #ForeignKey를 방금 save한 앨범으로 세팅하는 듯...
+            formset.save() #save photos
+            return redirect(self.object.get_absolute_url()) #album 상세 페이지로 이동
         else:
-            return self.render_to_response(self.get_context_data(form=form))
+            return self.render_to_response(self.get_context_data(form=form)) #유효하지 않은면 다시 출력
 
 class AlbumPhotoUV(LoginRequiredMixin, UpdateView):
     model = Album
@@ -100,13 +100,13 @@ class AlbumPhotoUV(LoginRequiredMixin, UpdateView):
     def form_valid(self, form):
         form.instance.owner = self.request.user
         context = self.get_context_data()
-        formset = context['formset']
+        formset = context['formset'] #photo
         for photoform in formset:
             photoform.instance.owner = self.request.user
         if formset.is_valid():
             self.object = form.save()
             formset.instance = self.object
-            formset.save()
+            formset.save() #save record to table
             return redirect(self.object.get_absolute_url())
         else:
             return self.render_to_response(self.get_context_data(form=form))
