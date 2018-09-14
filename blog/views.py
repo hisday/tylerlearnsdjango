@@ -17,23 +17,23 @@ from mysite.views import LoginRequiredMixin
 # Create your views here.
 
 #--- ListView
-class PostLV(ListView) :
+class PostLV(LoginRequiredMixin, ListView) :
     model = Post
     template_name = 'blog/post_all.html'
     context_object_name = 'posts' #default name = object_list
     paginate_by = 2 # the number of objects in one page
 
-class PostTOL(TaggedObjectList):
+class PostTOL(LoginRequiredMixin, TaggedObjectList):
     model = Post
     template_name = 'tagging/tagging_post_list.html'
 
 #--- DetailView
-class PostDV(DetailView):
+class PostDV(LoginRequiredMixin, DetailView):
     model = Post
     #unless defined, the defaults values are used.
 
 #-- ArchiveView added
-class PostAV(ArchiveIndexView):
+class PostAV(LoginRequiredMixin, ArchiveIndexView):
     model = Post
     date_field = 'modify_date'
 
@@ -43,15 +43,15 @@ class PostYAV(YearArchiveView):
     make_object_list = True
     #if make_object_list is true, the objects list of that year will be transmitted to the corresponding template
 
-class PostMAV(MonthArchiveView):
+class PostMAV(LoginRequiredMixin, MonthArchiveView):
     model = Post
     date_field = 'modify_date'
 
-class PostDAV(DayArchiveView):
+class PostDAV(LoginRequiredMixin, DayArchiveView):
     model = Post
     date_field = 'modify_date'
 
-class PostTAV(TodayArchiveView):
+class PostTAV(LoginRequiredMixin, TodayArchiveView):
     model = Post
     date_field = 'modify_date'
 
@@ -60,7 +60,7 @@ class TagTV(TemplateView):
     template_name = 'tagging/tagging_cloud.html'
 
 #-- FormView
-class SearchFormView(FormView):
+class SearchFormView(LoginRequiredMixin, FormView):
     form_class = PostSearchForm
     template_name = 'blog/post_search.html'
 
