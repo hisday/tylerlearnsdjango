@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ['DJANGO_DEBUG_OPTION']
 
 ALLOWED_HOSTS = '*'
 SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
@@ -132,6 +132,4 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-#LOGIN_URL = '/accounts/login/'
-#LOGOUT_URL = '/accounts/logout'
 LOGIN_REDIRECT_URL = '/'
