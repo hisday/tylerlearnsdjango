@@ -10,35 +10,9 @@
 <div id="content_home">
     <div id = "homeimg">
         <a href="/"><img src="{% static 'img/home.JPG' %}" style="height: 256px;"/></a>
-        <h4 style="margin: 0;">Welcome to tyler's place</h4>
     </div>
 
     <hr style="margin: 5px 0;">
-
-    <h2>Select Application</h2>
-
-    <table id="applist">
-        <tr>
-            <td><b><i><a href="{% url 'bookmark:index' %}">Bookmark</a></i></b></td>
-            <td>You can write your own bookmarks and share to others.</td>
-            <td class="Edit"><i><a href="{% url 'bookmark:add' %}">Add</a></i></td>
-            <td class="Edit"><i><a href="{% url 'bookmark:change' %}">Change</a></i></td>
-        </tr>
-
-        <tr>
-            <td><b><i><a href="{% url 'blog:index' %}">Blog</a></i></b></td>
-            <td>You can write your own posts and share to others.</td>
-            <td class="Edit"><i><a href="{% url 'blog:add' %}">Add</a></i></td>
-            <td class="Edit"><i><a href="{% url 'blog:change' %}">Change</a></i></td>
-        </tr>
-
-        <tr>
-            <td><b><i><a href="{% url 'photo:index' %}">Photo</a></i></b></td>
-            <td>You can upload you photos and share to others.</td>
-            <td class="Edit"><i><a href="{% url 'photo:album_add' %}">Add</a></i></td>
-            <td class="Edit"><i><a href="{% url 'photo:album_change' %}">Change</a></i></td>
-        </tr>
-    </table>
 </div>
 {% endblock content %}
 

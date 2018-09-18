@@ -4,7 +4,7 @@
 {% block extrastyle %}{% static "css/forms.css" %}{% endblock %}
 
 {% block content %}
-<div id="content">
+<div id="content" class='container'>
   <h1>Please Login</h1>
   <form action="." method="post">{% csrf_token %}
     {% if form.errors %}

@@ -18,7 +18,7 @@ div#menu {
     position: absolute;
     top: 30px;
     left: 0px;
-    height: 20px;
+    height: 30px;
     width: 100%;
     display: table;
     table-layout: fixed;
@@ -30,8 +30,8 @@ div#menu {
 div#content {
     position: absolute;
     top: 70px;
-    left: 50px;
-    right: 50px;
+    left: 100px;
+    right: 100px;
 }
 
 div#footer {

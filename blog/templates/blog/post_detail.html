@@ -2,8 +2,8 @@
 {% block title %}post_archive.html {% endblock %}
 {% block content %}
 
-
-<h2>{{ object.title}}</h2>
+<container>
+<h3>{{ object.title}}</h3>
 
 <p class="other_posts">
     {% if object.get_previous_by_modify_date %}
@@ -19,11 +19,13 @@
     {% endif %}
 </p>
 
-<p class="date">{{ object.modify_date|date:"j F Y"}}</p>
+<h4><p class="date">{{ object.modify_date|date:"j F Y"}}</p></h4>
 <br/>
 
 <div class = "body">
+  <h5>
     {{ object.content|linebreaks }}
+  </h5>
 </div>
 
 <div>
@@ -41,5 +43,5 @@
   {% load disqus_tags %}
   {% disqus_show_comments %}
 </div>
-
+</div>
 {% endblock %}
