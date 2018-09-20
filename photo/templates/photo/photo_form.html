@@ -3,7 +3,7 @@
 {% load staticfiles %}
 {% block extrastyle %}{% static "css/forms.css" %}{% endblock %}
 {% block content %}
-<h1>Photo Create/Update - {{user}}</h1>
+<h3>Photo Create/Update - {{user}}</h3>
 {% if form.is_multipart %}
 <form enctype="multipart/form-data" method="post" action=".">
 {% else %}

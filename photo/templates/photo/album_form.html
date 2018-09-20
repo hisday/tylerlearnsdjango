@@ -3,7 +3,7 @@
 {% load staticfiles %}
 {% block extrastyle %}{% static "css/forms.css" %}{% endblock %}
 {% block content %}
-<h1>Album-Photo InlineFormSet</h1>
+<h3>Album-Photo InlineFormSet</h3>
 {% if form.is_multipart or formset.is_multipart %}
 <form enctype="multipart/form-data" method="post" action=".">
 {% else %}

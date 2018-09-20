@@ -2,7 +2,7 @@
 {% block title %}post_archive_year.html {% endblock %}
 {% block content %}
 <div class="container">
-  <h1>Post Archives for {{ year|date:"Y"}}</h1>
+  <h3>Post Archives for {{ year|date:"Y"}}</h3>
   <ul>
     {% for date in date_list %}
       <li style="display: inline;">

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %}post_search.html{% endblock %}
 {% block content %}
-<h1>Blog Search</h1>
+<h3>Blog Search</h3>
 <div class="container">
   <form action="." method="post"> {% csrf_token %}
     {{ form.as_table }}
