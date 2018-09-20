@@ -24,14 +24,14 @@ div#menu {
     table-layout: fixed;
     border-spacing: 0px 0px;
     background: #ffa;
-    font-size: 15px;
+    font-size: 12px;
 }
 
 div#content {
-    position: absolute;
     top: 90px;
     left: 100px;
     right: 100px;
+    margin: 0 auto;
 }
 
 div#footer {
