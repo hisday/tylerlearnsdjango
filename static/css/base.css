@@ -29,10 +29,9 @@ div#menu {
 
 div#content {
     position: absolute;
-    top: 90px;
-    left: 10px;
-    right: 10px;
-    display: block;
+    top: 100px;
+    left: 0px;
+    right: 0px;
     word-break: break-all;
 }
 

@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% block title %}post_archive.html {% endblock %}
 {% block content %}
-<h5><strong>{{ object.title}}</strong></h5>
-<h7><p class="date">{{ object.modify_date|date:"j F Y"}}</p></h7>
+<center><h5><strong>{{ object.title}}</strong></h5>
+<h7><p class="date">{{ object.modify_date|date:"j F Y"}}</p></h7></center>
 <p><h6>{{ object.content|linebreaks }}</h6></p>
-<center><h7><p class="other_posts">
+
+<container>
+<center><h7><i><p class="other_posts">
     {% if object.get_previous_by_modify_date %}
         <a href="{{ object.get_previous_post.get_absolute_url }}" title="View previous post">
             &laquo;--previous
@@ -15,7 +17,8 @@
             next--&raquo;
         </a>
     {% endif %}
-</p></h7></center>
+</p></i></h7></center>
+</container>
 <div>
   <b>TAGS: </b>
   {% load tagging_tags %}
