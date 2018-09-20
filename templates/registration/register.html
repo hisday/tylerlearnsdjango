@@ -3,7 +3,7 @@
 {% load staticfiles %}
 {% block extrastyle %}{% static "css/forms.css" %}{% endblock %}
 {% block content %}
-<h1>New User Registration</h1>
+<h4>New User Registration</h4>
 <form class="" action="." method="post">{% csrf_token %}
   {% if form.errors %}
   <p class="errornote">Wrong! Please corrent the error(s) below.</p>

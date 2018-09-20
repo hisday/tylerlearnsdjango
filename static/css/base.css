@@ -28,6 +28,7 @@ div#menu {
 }
 
 div#content {
+    position: absolute;
     top: 90px;
     left: 100px;
     right: 100px;
@@ -47,7 +48,7 @@ div#footer {
 .maintitle {
     display: table-cell;
     vertical-align: middle;
-    padding-left: 20px;
+    padding-left: 0px;
     color: #ffc;
     font-weight: bold;
     font-size: 16px;
@@ -67,39 +68,6 @@ div#footer {
     color: white;
 }
 
-/* MENU */
-div#menu a:link, div#menu a:visited {
-    color: #36c;
-}
-
-div#menu > li {
-    display: table-cell;
-    vertical-align: middle;
-    border: 2px solid #bbb;
-    border-radius: 25px;
-    text-align: center;
-    font-weight: bold;
-}
-
-/* pulldown menu */
-div#menu li  ul {
-    display:none;
-    position:absolute;
-    margin: 0;
-    padding:10px 10px 5px 10px;
-    list-style:none;
-    border-right: 1px solid #ccc;
-    border-left: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    background: white;
-    z-index: 1;
-}
-
-div#menu li:hover ul {
-    display:block;
-}
-
-/* LINK */
 a:link, a:visited {
     color: #369;
     text-decoration: none;

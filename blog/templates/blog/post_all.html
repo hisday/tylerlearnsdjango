@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container">
-  <h3>Blog List</h3>
   {% for post in posts %}
       <h4><a href="{% url 'blog:post_detail' post.slug %}">{{ post.title}}</a></h4>
       {{ post.modify_date|date:"N d, Y"}}

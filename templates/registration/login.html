@@ -3,7 +3,7 @@
 {% load staticfiles %}
 {% block extrastyle %}{% static "css/forms.css" %}{% endblock %}
 {% block content %}
-<h1>Please Login</h1>
+<h4>Please Login</h4>
 <form action="." method="post">{% csrf_token %}
   {% if form.errors %}
     <p class="errornote">Wrong! Please correct the error(s) below.</p>
