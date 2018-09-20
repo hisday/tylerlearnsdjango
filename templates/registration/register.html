@@ -2,40 +2,30 @@
 {% block title %}register.html{% endblock %}
 {% load staticfiles %}
 {% block extrastyle %}{% static "css/forms.css" %}{% endblock %}
-
 {% block content %}
-<div id="content">
-  <h1>New User Registration</h1>
-  <form class="" action="." method="post">{% csrf_token %}
-    {% if form.errors %}
-    <p class="errornote">Wrong! Please corrent the error(s) below.</p>
-    <p>{{ form.errors }}</p>
-    {% endif %}
-
-    <p>Please enter your username etc.</p>
-
-    <fieldset class= "aligned">
-      <div class="form-row">
-        {{ form.username.label_tag }} {{ form.username }}
-      </div>
-
-      <div class="form-row">
-        {{ form.password1.label_tag }} {{ form.password1 }}
-      </div>
-
-      <div class="form-row">
-        {{ form.password2.label_tag }} {{ form.password2 }}
-      </div>
-    </fieldset>
-
-    <div class="submit-row">
-      <input type="submit" name="" value="Register">
+<h1>New User Registration</h1>
+<form class="" action="." method="post">{% csrf_token %}
+  {% if form.errors %}
+  <p class="errornote">Wrong! Please corrent the error(s) below.</p>
+  <p>{{ form.errors }}</p>
+  {% endif %}
+  <p>Please enter your username etc.</p>
+  <fieldset class= "aligned">
+    <div class="form-row">
+      {{ form.username.label_tag }} {{ form.username }}
     </div>
-
-    <script type="text/javascript">
-      document.getElementById('id_username').focus();
-    </script>
-  </form>
-
-</div>
+    <div class="form-row">
+      {{ form.password1.label_tag }} {{ form.password1 }}
+    </div>
+    <div class="form-row">
+      {{ form.password2.label_tag }} {{ form.password2 }}
+    </div>
+  </fieldset>
+  <div class="submit-row">
+    <input type="submit" name="" value="Register">
+  </div>
+  <script type="text/javascript">
+    document.getElementById('id_username').focus();
+  </script>
+</form>
 {% endblock %}

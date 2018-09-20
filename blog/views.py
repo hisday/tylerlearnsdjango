@@ -21,7 +21,7 @@ class PostLV(LoginRequiredMixin, ListView) :
     model = Post
     template_name = 'blog/post_all.html'
     context_object_name = 'posts' #default name = object_list
-    paginate_by = 2 # the number of objects in one page
+    paginate_by = 5 # the number of objects in one page
 
 class PostTOL(LoginRequiredMixin, TaggedObjectList):
     model = Post
@@ -78,7 +78,6 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     fields = ['title', 'slug', 'description', 'content', 'tag']
     initial = {'slug': 'auto-filling-do-not-input'}
     success_url = reverse_lazy('blog:index')
-
 
     def form_valid(self, form):
         form.instance.owner = self.request.user
