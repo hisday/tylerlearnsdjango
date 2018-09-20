@@ -30,9 +30,10 @@ div#menu {
 div#content {
     position: absolute;
     top: 90px;
-    left: 100px;
-    right: 100px;
-    margin: 0 auto;
+    left: 10px;
+    right: 10px;
+    display: block;
+    word-break: break-all;
 }
 
 div#footer {
